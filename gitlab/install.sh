@@ -22,3 +22,5 @@ external_url "EXT_URL"
 EOF
 
 gitlab-ctl reconfigure
+
+echo -e 'The default username and password:\nadmin@local.host\n5iveL!fe'
