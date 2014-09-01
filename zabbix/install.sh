@@ -12,7 +12,6 @@ echo "Installing rpm ..."
 rpm -ivh http://repo.zabbix.com/zabbix/2.2/rhel/6/x86_64/zabbix-release-2.2-1.el6.noarch.rpm
 yum install -y zabbix-{agent,get,java-gateway,proxy,proxy-mysql,sender,server,server-mysql,web,web-mysql} zabbix mysql-server
 chkconfig mysqld on
-chkconfig httpd on
 service mysqld start
 
 echo -e "Setting up DB ...\nMySQL root password is: $DBPASS"
@@ -40,5 +39,10 @@ php_value date.timezone Asia/Shanghai"
 EOF
 
 service zabbix-server restart
+service zabbix-agent restart
 chkconfig zabbix-server on
+chkconfig zabbix-agent on
 service httpd restart
+chkconfig httpd on
+
+echo -e "If you wanna more hosts to be added, just install and start zabbix-agent service in those."
