@@ -45,4 +45,4 @@ chkconfig zabbix-agent on
 service httpd restart
 chkconfig httpd on
 
-echo -e "If you wanna more hosts to be added, just install and start zabbix-agent service in those."
+echo -e "If you wanna more hosts to be added, please install zabbix-agent service, edit Server section in /etc/zabbix/zabbix_agentd.conf, and start the service."
